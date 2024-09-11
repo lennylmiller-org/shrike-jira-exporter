@@ -1,0 +1,10 @@
+{
+  "extensionName": {
+    "message": "Jira Attachment Exporter",
+    "description": "Name of the Chrome extension."
+  },
+  "extensionDescription": {
+    "message": "Exports Jira issue XML and downloads attachments.",
+    "description": "Description of the Chrome extension."
+  }
+}

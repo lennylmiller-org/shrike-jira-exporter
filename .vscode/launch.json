@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome with Extension",
+      "url": "https://banno-jha.atlassian.net/browse/OPS-14232",
+      "webRoot": "${workspaceFolder}/chrome-extension",
+      "runtimeArgs": [
+        "--disable-extensions-except=${workspaceFolder}/chrome-extension",
+        "--load-extension=${workspaceFolder}/chrome-extension"
+      ]
+    }
+  ]
+}

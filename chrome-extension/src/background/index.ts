@@ -1,9 +1,14 @@
-import 'webextension-polyfill';
-import { exampleThemeStorage } from '@extension/storage';
-
-exampleThemeStorage.get().then(theme => {
-  console.log('theme', theme);
+chrome.runtime.onMessage.addListener(message => {
+  if (message.action === 'download_attachments') {
+    chrome.storage.local.get('downloadFolder', ({ downloadFolder }) => {
+      message.attachments.forEach(attachment => {
+        const downloadUrl = `/secure/attachment/${message.ticketId}/${attachment}`;
+        const filename = `${downloadFolder}/${attachment}`;
+        chrome.downloads.download({
+          url: downloadUrl,
+          filename,
+        });
+      });
+    });
+  }
 });
-
-console.log('background loaded');
-console.log("Edit 'chrome-extension/src/background/index.ts' and save to reload.");

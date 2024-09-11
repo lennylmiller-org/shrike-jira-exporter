@@ -6,7 +6,7 @@ export default {
   permissions: ['activeTab', 'scripting', 'downloads', 'storage'],
   default_locale: 'en', // Add this field
   background: {
-    service_worker: 'background.js',
+    service_worker: 'background.iife.js',
   },
   action: {
     default_popup: 'popup.html',
